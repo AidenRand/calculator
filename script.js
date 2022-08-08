@@ -1,8 +1,14 @@
 const resultText = document.querySelector(".resultText");
-const numberBtns = document.querySelectorAll(".numberBtns");
-const operatorBtns = document.querySelectorAll(".operatorBtns");
-const oddBtns = document.querySelectorAll(".oddBtns");
-const clearBtn = document.querySelector("#clearBtn");
+const numberBtns = document.querySelectorAll("[data-number]");
+const operatorBtns = document.querySelectorAll("[data-operation]");
+const equalBtn = document.querySelector("[data-equal]");
+const deleteBtn = document.querySelector("[data-delete]");
+const allClearBtn = document.querySelector("[data-all-clear]");
+const previousNumber = document.querySelector("[data-previous-operand]");
+const currentNumber = document.querySelector("[data-current-operand]");
+let firstOperand = '';
+let secondOperand = '';
+let result;
 
 function add(a, b) {
   return a + b;
@@ -36,26 +42,3 @@ function operate(a, b, c) {
       }
   }
 }
-
-numberBtns.forEach(function (i) {
-  i.addEventListener('click', function() {
-    resultText.textContent = this.textContent;
-  })
-})
-
-operatorBtns.forEach(function (i) {
-  i.addEventListener('click', function() {
-    resultText.textContent = this.textContent;
-  })
-})
-
-oddBtns.forEach(function (i) {
-  i.addEventListener('click', function() {
-    resultText.textContent = this.textContent;
-  })
-})
-
-clearBtn.addEventListener('click', function() {
-  resultText.textContent = '';
-})
-

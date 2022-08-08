@@ -3,36 +3,58 @@
     padding: 0;
 }
 
+@font-face {
+    font-family: alarm;
+    src: url(./DELETE\ FONTS/alarmClock.ttf);
+}
+
 body {
-    background-color: #1e1e1e;
+    background-color: #1b1b1b;
 }
 
-.resultText {
-    display: flex;
+.calc-grid {
+    display: grid;
     justify-content: center;
-    color: white;
-    border: 1px solid rgb(255, 255, 255);
-    width: 300px;
-    height: 100px;
-    font-size: 44px;
-    margin-left: auto;
-    margin-right: auto;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto)repeat(5, 100px);
 }
 
-.buttons {
+.calc-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border:1px solid rgb(5, 5, 5);
+    background-color: rgb(138, 138, 138);
+    transition: all 0.1s ease-in-out;
+}
+
+.calc-grid > button:hover {
+    background-color: rgb(158, 158, 158);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+.output {
     display: flex;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;padding: 10px;
+    grid-column: 1 / -1;
+    background-color: rgba(57, 88, 65, 0.432);
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
-.numberBtns {
-    font-size: 60px;
+.output .previous-operand {
+    font-size: 2rem;
+    font-family: alarm;
+    color: rgb(19, 19, 19);
 }
 
-.operatorBtns {
-    font-size: 60px;
+.output .current-operand {
+    font-size: 3rem;
+    font-family: alarm;
+    color: rgb(14, 14, 14);
 }
-
-.oddBtns {
-    font-size: 60px;
-}
-
