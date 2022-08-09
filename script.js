@@ -54,7 +54,7 @@ class Calculator {
       default:
         return "Syntax error";
     }
-    this.currentNumber = computation;
+    this.currentNumber = computation.toFixed(2);
     this.operation = undefined;
     this.previousNumber = "";
   }
